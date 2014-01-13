@@ -19,7 +19,7 @@
           "uri":"git@github.com:jmore-reachtech/meta-reach.git",
           "mirror":"git://git-mirror.local/meta-reach.git",
           "branch":"dylan",
-          "rev":"c61705989c787fb9ca3593910c87c5928a6e6d1f",
+          "rev":"c61705989c787fb9ca3593910c87c5928a6e6d1f"
         },
         {
           "name":"meta-crank",
