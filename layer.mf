@@ -26,7 +26,7 @@
           "uri":"git@github.com:jmore-reachtech/meta-crank.git",
           "mirror":"git://git-mirror.local/meta-crank.git",
           "branch":"dylan",
-          "rev":"0af280ba1ef8c9204b0cb2ebfc2c83a3eed23be8",
+          "rev":"bf17bbdecf1effce2d5f35a04275e52ba28e1040",
           "main": true
         }
       ]
