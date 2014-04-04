@@ -1,11 +1,11 @@
 #! /bin/sh
 #
-# crankinit	Initialize the sbengine for Crank
+# crankinit Initialize the sbengine for Crank
 #
 
 case "$1" in
-	start|"")
-		test "$VERBOSE" != no && echo "Initializing sbengine..."
+ start|"")
+ test "$VERBOSE" != no && echo "Initializing sbengine..."
                 if [ -f /etc/profile.d/tslib.sh ]; then
                         source /etc/profile.d/tslib.sh
                 fi  
@@ -14,20 +14,23 @@ case "$1" in
                                 /usr/bin/ts_calibrate
                         fi  
                 fi                 
-                export GRE_PLUGINS=/usr/lib/plugin
+                export SB_PLUGINS=/opt/crank_software/linux-codesourcery-armle-fbdev-obj/plugins
+                export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/crank_software/linux-codesourcery-armle-fbdev-obj/lib
+                echo -e '\033[9;0]' > /dev/tty1 #stop screen blanking
+                echo 0 > /sys/class/graphics/fbcon/cursor_blink #remove cursor blink
                 if [ ! -f /usr/lib/libts-0.0.so.0 ]; then
                   ln -s /usr/lib/libts-1.0.so.0 /usr/lib/libts-0.0.so.0
                 fi
-                /usr/bin/sbengine /application/crank-demo/button.gapp &
+                /opt/crank_software/linux-codesourcery-armle-fbdev-obj/bin/sbengine /opt/crank_software/demo/launcher/launcher_480.gapp &
                 ;;
-	stop)
-		test "$VERBOSE" != no && echo "Disabling sbengine..."
+ stop)
+ test "$VERBOSE" != no && echo "Disabling sbengine..."
                 killall sbengine
-		;;
-	*)
-		echo "Usage: crankinit {start|stop}" >&2
-		exit 1
-		;;
+ ;;
+ *)
+ echo "Usage: crankinit {start|stop}" >&2
+ exit 1
+ ;;
 esac
 
 exit 0

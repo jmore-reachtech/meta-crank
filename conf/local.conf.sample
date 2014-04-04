@@ -1,15 +1,15 @@
 # We need to set these items
-MACHINE ??= "g2c1"
+MACHINE ??= "g2c-crank"
 DISTRO ?= "reach"
-PACKAGE_CLASSES ?= "package_rpm"
+PACKAGE_CLASSES ?= "package_ipk"
 EXTRA_IMAGE_FEATURES = "debug-tweaks"
 USER_CLASSES ?= "buildstats image-mklibs image-prelink"
 PATCHRESOLVE = "noop"
 CONF_VERSION = "1"
 
 # These are optional based on host computer
-BB_NUMBER_THREADS = "4"
-PARALLEL_MAKE = "-j 4"
+BB_NUMBER_THREADS = "12"
+PARALLEL_MAKE = "-j 12"
 
 # These can be share on a per developer workstation like /opt
 DL_DIR ?= "/opt/yocto/downloads"
