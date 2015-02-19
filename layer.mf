@@ -37,6 +37,13 @@
           "main": true
         },
         {
+          "name":"meta-qt5",
+          "uri":"git@github.com:jmore-reachtech/meta-qt5.git",
+          "mirror":"git://git.reachtech.com/meta-qt5.git",
+          "branch":"dizzy",
+          "rev":"2aaba8b97f63149fda3c24e1002c8034387c0feb"
+        },
+        {
           "name":"meta-crank",
           "uri":"git@github.com:jmore-reachtech/meta-crank.git",
           "mirror":"git://git-mirror.local/meta-crank.git",

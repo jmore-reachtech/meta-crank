@@ -1,6 +1,4 @@
 # We need to set these items
-MACHINE ??= "g2c-crank"
-DISTRO ?= "reach"
 PACKAGE_CLASSES ?= "package_ipk"
 EXTRA_IMAGE_FEATURES = "debug-tweaks"
 USER_CLASSES ?= "buildstats image-mklibs image-prelink"
@@ -8,18 +6,21 @@ PATCHRESOLVE = "noop"
 CONF_VERSION = "1"
 
 # These are optional based on host computer
-BB_NUMBER_THREADS = "12"
-PARALLEL_MAKE = "-j 12"
+BB_NUMBER_THREADS = "32"
+PARALLEL_MAKE = "-j 32"
 
 # These can be share on a per developer workstation like /opt
 DL_DIR ?= "/opt/yocto/downloads"
 #SSTATE_DIR ?= "/opt/yocto/sstate"
 
+ACCEPT_FSL_EULA = "1"
+
 # Possibly make these available for download and sstate
 #SSTATE_MIRRORS ?= "\
 #file://.* http://someserver.tld/share/sstate/PATH \n \
 #file://.* file:///some/local/dir/sstate/PATH"
-#INHERIT += "own-mirrors"
-#SOURCE_MIRROR_URL = "http://feeds.reach.com/feeds/yocto/oe-source-cache"
+INHERIT += "own-mirrors"
+SOURCE_MIRROR_URL = "http://git.reachtech.com/downloads"
 
-#SDKMACHINE ?= "i686"
+SDKMACHINE ?= "i686"
+DISTRO ?= "reach"
