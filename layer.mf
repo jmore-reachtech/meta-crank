@@ -41,7 +41,7 @@
           "uri":"git@github.com:jmore-reachtech/meta-crank.git",
           "mirror":"git://git-mirror.local/meta-crank.git",
           "branch":"dizzy",
-          "rev":"bf17bbdecf1effce2d5f35a04275e52ba28e1040",
+          "rev":"ee70c23d722c7d0e00cd9b40287fb7f6cb704d8f",
           "main": true
         }
       ]
