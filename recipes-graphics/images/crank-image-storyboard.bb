@@ -12,6 +12,7 @@ IMAGE_INSTALL_append = " \
 	coreutils \
 	usbutils \
         crank-runtime \
+        crank-runtime-dev \
         crank-demo \
         tslib tslib-calibrate tslib-tests tsinit \
         "
