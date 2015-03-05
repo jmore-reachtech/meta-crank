@@ -15,7 +15,18 @@ IMAGE_INSTALL_append = " \
         crank-runtime-dev \
         crank-demo \
         tslib tslib-calibrate tslib-tests tsinit \
-        "
+        packagegroup-fsl-gstreamer \
+        gstreamer \
+        gst-plugins-base-app \
+        gst-plugins-base \
+        gst-plugins-good \
+        gst-plugins-good-rtsp \
+        gst-plugins-good-udp \
+        gst-plugins-good-rtpmanager \
+        gst-plugins-good-rtp \
+        gst-plugins-good-video4linux2 \
+"
+
 inherit core-image
 
 export IMAGE_BASENAME = "crank-image-storyboard"
