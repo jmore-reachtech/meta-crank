@@ -4,21 +4,24 @@
 #
 
 case "$1" in
- start|"")
- test "$VERBOSE" != no && echo "Initializing sbengine..."
+ start)
+                echo "Starting sbengine..."
                 if [ -f /etc/profile.d/tslib.sh ]; then
                         source /etc/profile.d/tslib.sh
                 fi              
                 export SB_PLUGINS=/usr/lib/plugin/
-                #echo -e '\033[9;0]' > /dev/tty1 #stop screen blanking
-                #echo 0 > /sys/class/graphics/fbcon/cursor_blink #remove cursor blink
-                #if [ ! -f /usr/lib/libts-0.0.so.0 ]; then
-                #  ln -s /usr/lib/libts-1.0.so.0 /usr/lib/libts-0.0.so.0
-                #fi
                 sbengine /application/src/circles.gapp &
                 ;;
+ debug)
+                echo "Debugging sbengine..."
+                if [ -f /etc/profile.d/tslib.sh ]; then
+                        source /etc/profile.d/tslib.sh
+                fi              
+                export SB_PLUGINS=/usr/lib/plugin/
+                sbengine -vvv /application/src/circles.gapp &
+                ;;
  stop)
- test "$VERBOSE" != no && echo "Disabling sbengine..."
+                echo "Stopping sbengine..."
                 killall sbengine
  ;;
  *)
