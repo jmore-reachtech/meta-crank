@@ -9,16 +9,18 @@ case "$1" in
                 if [ -f /etc/profile.d/tslib.sh ]; then
                         source /etc/profile.d/tslib.sh
                 fi              
-                export SB_PLUGINS=/usr/lib/plugin/
-                sbengine /application/src/circles.gapp &
+                export SB_PLUGINS=/Crank/plugins/
+                export LD_LIBRARY_PATH=/Crank/lib
+                /Crank/bin/sbengine /application/src/circles.gapp &
                 ;;
  debug)
                 echo "Debugging sbengine..."
                 if [ -f /etc/profile.d/tslib.sh ]; then
                         source /etc/profile.d/tslib.sh
                 fi              
-                export SB_PLUGINS=/usr/lib/plugin/
-                sbengine -vvv /application/src/circles.gapp &
+                export SB_PLUGINS=/Crank/plugins/
+                export LD_LIBRARY_PATH=/Crank/lib
+                /Crank/bin/sbengine -vvv /application/src/circles.gapp &
                 ;;
  stop)
                 echo "Stopping sbengine..."
