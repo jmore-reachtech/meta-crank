@@ -3,6 +3,8 @@
 # crankinit Initialize the sbengine for Crank
 #
 
+ARGS=" -e -p \"filesrc location=video.m4v name=media-src typefind=true ! aiurdemux name=demux demux. ! queue max-size-buffers=0 max-size-time=0 ! vpudec framedrop=true ! mfw_ipucsc ! videoscale ! video/x-raw-rgb,bpp=16,depth=16,width=640,height=360 ! fakesink name=video-sink sync=1 qos=1 demux. ! queue max-size-buffers=0 max-size-time=0 ! beepdec ! audioconvert ! audio/x-raw-int,channels=2 ! alsasink\""
+
 case "$1" in
  start)
                 echo "Starting sbengine..."
@@ -12,6 +14,8 @@ case "$1" in
                 export SB_PLUGINS=/Crank/plugins/
                 export LD_LIBRARY_PATH=/Crank/lib
                 /Crank/bin/sbengine /application/src/circles.gapp &
+                sleep 1
+                /Crank/bin/gstreamer-backend ${ARGS} >> /dev/null 2>&1 &
                 ;;
  debug)
                 echo "Debugging sbengine..."
@@ -21,13 +25,15 @@ case "$1" in
                 export SB_PLUGINS=/Crank/plugins/
                 export LD_LIBRARY_PATH=/Crank/lib
                 /Crank/bin/sbengine -vvv /application/src/circles.gapp &
+                sleep 1
+                /Crank/bin/gstreamer-backend ${ARGS} &
                 ;;
  stop)
                 echo "Stopping sbengine..."
                 killall sbengine
  ;;
  *)
- echo "Usage: crankinit {start|stop}" >&2
+ echo "Usage: crankinit {start|debug|stop}" >&2
  exit 1
  ;;
 esac
