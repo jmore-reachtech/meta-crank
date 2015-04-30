@@ -33,7 +33,7 @@
           "uri":"git@github.com:jmore-reachtech/meta-reach.git",
           "mirror":"git://git.reachtech.com/meta-reach.git",
           "branch":"dizzy",
-          "rev":"98a07ab8817d8dd56f3c92e8c6ba99973f1ebc63",
+          "rev":"2b8247541e6aad1d688e135756f64d1060de5eeb",
           "main": true
         },
         {
@@ -48,7 +48,7 @@
           "uri":"git@github.com:jmore-reachtech/meta-crank.git",
           "mirror":"git://git-mirror.local/meta-crank.git",
           "branch":"dizzy",
-          "rev":"adf482c9005eb662952df5651410f04ec4de2d73",
+          "rev":"2947d4596b616326926991de386aca74bb8691fa",
           "main": true
         }
       ]
