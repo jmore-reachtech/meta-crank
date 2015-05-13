@@ -1,4 +1,4 @@
 # Append path for reach layer to include kernel defconfig 
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
   
-SRCREV = "856889c0add86b425f04f7c458ab14859b27b01a"
+SRCREV = "08987b5ffd204ad6d48f9b8b9963f3a278f6c196"
