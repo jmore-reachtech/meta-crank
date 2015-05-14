@@ -48,7 +48,7 @@
           "uri":"git@github.com:jmore-reachtech/meta-crank.git",
           "mirror":"git://git-mirror.local/meta-crank.git",
           "branch":"dizzy",
-          "rev":"2947d4596b616326926991de386aca74bb8691fa",
+          "rev":"b64d44b33923f8229e7a4113227915060c514057",
           "main": true
         }
       ]
@@ -57,31 +57,14 @@
   "conf": "TEMPLATECONF=meta-crank/conf",
   "machines":[
     {
-      "name": "g2c-crank",
+      "name": "g2c-43-24",
       "images":[
         {
           "name": "reach-image-crank"
         }
       ]
-    },
-    {
-      "name": "g2h-crank-1",
-      "images":[
-        {
-          "name": "crank-image-storyboard"
-        }
-      ]
-    },
-    {
-      "name": "g2h-crank-4",
-      "images":[
-        {
-          "name": "crank-image-storyboard"
-        }
-      ]
-    },
-    {
-      "name": "g2h-crank-8",
+    },{
+      "name": "g2h-solo-1",
       "images":[
         {
           "name": "crank-image-storyboard"
