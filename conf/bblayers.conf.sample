@@ -12,4 +12,5 @@ BBLAYERS ?= " \
   ##COREBASE##/meta-fsl-arm \
   ##COREBASE##/meta-reach \
   ##COREBASE##/meta-crank \
+  ##COREBASE##/meta-openembedded/meta-oe \
   "
