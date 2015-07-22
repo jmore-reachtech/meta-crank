@@ -12,7 +12,7 @@ case "$1" in
                 export SB_PLUGINS=/Crank/plugins/
                 export LD_LIBRARY_PATH=/Crank/lib
                 /Crank/bin/gstreamer-backend -p " filesrc location=video.m4v name=media-src typefind=true ! aiurdemux name=demux demux. ! queue max-size-buffers=0 max-size-time=0 ! vpudec framedrop=true ! mfw_ipucsc ! videoscale ! video/x-raw-rgb,bpp=16,depth=16,width=640,height=360 ! mfw_v4lsink disp-width=640 disp-height=360 axis-top=60 axis-left=72 name=video-sink sync=1 qos=1 demux. ! queue max-size-buffers=0 max-size-time=0 ! beepdec ! audioconvert ! audio/x-raw-int,channels=2 ! alsasink" &
-                /Crank/bin/sbengine /application/src/circles.gapp &
+                /Crank/bin/sbengine $(ls /application/src/*.gapp | sed -n "1 p") &
                 ;;
  debug)
                 echo "Debugging sbengine..."
@@ -22,7 +22,7 @@ case "$1" in
                 export SB_PLUGINS=/Crank/plugins/
                 export LD_LIBRARY_PATH=/Crank/lib
                 /Crank/bin/gstreamer-backend -p " filesrc location=video.m4v name=media-src typefind=true ! aiurdemux name=demux demux. ! queue max-size-buffers=0 max-size-time=0 ! vpudec framedrop=true ! mfw_ipucsc ! videoscale ! video/x-raw-rgb,bpp=16,depth=16,width=640,height=360 ! mfw_v4lsink disp-width=640 disp-height=360 axis-top=60 axis-left=72 name=video-sink sync=1 qos=1 demux. ! queue max-size-buffers=0 max-size-time=0 ! beepdec ! audioconvert ! audio/x-raw-int,channels=2 ! alsasink" &
-                /Crank/bin/sbengine -vvv /application/src/circles.gapp &
+                /Crank/bin/sbengine -vvv $(ls /application/src/*.gapp | sed -n "1 p") &
                 ;;
  stop)
                 echo "Stopping sbengine..."
