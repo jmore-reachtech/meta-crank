@@ -21,7 +21,34 @@ case "$1" in
                 if [ ! -f /usr/lib/libts-0.0.so.0 ]; then
                   ln -s /usr/lib/libts-1.0.so.0 /usr/lib/libts-0.0.so.0
                 fi
-                /Crank/bin/sbengine /application/src/launcher/launcher_480.gapp &
+                if [ -f /application/src/launcher/launcher_480.gapp ]; then
+                	/Crank/bin/sbengine /application/src/launcher/launcher_480.gapp &
+		else
+                	/Crank/bin/sbengine $(ls /application/src/*.gapp | sed -n "1 p") &
+                fi
+                ;;
+ debug)
+ test "$VERBOSE" != no && echo "Initializing sbengine..."
+                if [ -f /etc/profile.d/tslib.sh ]; then
+                        source /etc/profile.d/tslib.sh
+                fi  
+                if [ -e "$TSLIB_TSDEVICE" ]; then
+                        if [ ! -f /etc/pointercal ]; then
+                                /usr/bin/ts_calibrate
+                        fi  
+                fi                 
+                export SB_PLUGINS=/Crank/plugin
+                export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/Crank/lib
+                echo -e '\033[9;0]' > /dev/tty1 #stop screen blanking
+                echo 0 > /sys/class/graphics/fbcon/cursor_blink #remove cursor blink
+                if [ ! -f /usr/lib/libts-0.0.so.0 ]; then
+                  ln -s /usr/lib/libts-1.0.so.0 /usr/lib/libts-0.0.so.0
+                fi
+                if [ -f /application/src/launcher/launcher_480.gapp ]; then
+                	/Crank/bin/sbengine -vvv /application/src/launcher/launcher_480.gapp &
+		else
+                	/Crank/bin/sbengine -vvv $(ls /application/src/*.gapp | sed -n "1 p") &
+                fi
                 ;;
  stop)
  test "$VERBOSE" != no && echo "Disabling sbengine..."
