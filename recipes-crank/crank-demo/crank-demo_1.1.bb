@@ -16,9 +16,10 @@ SRC_URI = "file://${P}.tar.gz"
 S = "${WORKDIR}"
 
 do_install() {
-    install -d ${D}/opt/crank_software
+    install -d ${D}/application
+    install -d ${D}/application/src
     
-    cp -rf ${S}/crank_software/* ${D}/opt/crank_software
+    cp -rf ${S}/demo/* ${D}/application/src/
 }
 
-FILES_${PN} += "/opt/crank_software"
+FILES_${PN} += "/application/src"
