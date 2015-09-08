@@ -42,7 +42,7 @@
   "conf": "TEMPLATECONF=meta-crank/conf",
   "machines":[
     {
-      "name": "g2c-crank",
+      "name": "g2c-43-24",
       "images":[
         {
           "name": "reach-image-crank"
