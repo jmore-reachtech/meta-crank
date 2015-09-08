@@ -19,7 +19,7 @@
           "uri":"git@github.com:jmore-reachtech/meta-reach.git",
           "mirror":"git://git-mirror.local/meta-reach.git",
           "branch":"dylan",
-          "rev":"6e5c5880f32fbda40ed36595ecf9012077f6881d"
+          "rev":"33d955233a8ba99fa99caccd263ed02a030183e7"
         },
 	{
           "name":"meta-openembedded",
