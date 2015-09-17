@@ -25,5 +25,5 @@ IMAGE_INSTALL_append = " \
 
 inherit core-image
 
-export IMAGE_BASENAME = "reach-image-crank"
+export IMAGE_BASENAME = "crank-image-storyboard"
 
