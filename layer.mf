@@ -33,8 +33,7 @@
           "uri":"git@github.com:jmore-reachtech/meta-reach.git",
           "mirror":"git://git.reachtech.com/meta-reach.git",
           "branch":"dizzy",
-          "rev":"053a14f51cb2af2ef22c19726e06984ae01af1b6",
-          "main": true
+          "rev":"f0c6f8e3677fb6645f596403e0fdf40841172525"
         },
         {
           "name":"meta-qt5",
